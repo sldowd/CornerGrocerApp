@@ -1,0 +1,28 @@
+BEGIN
+
+Include libraries
+    - fstrean
+    - string
+    - map
+Classes
+    - CreateReports
+    - ListSearch
+    - FileHandler
+Read, analyze, and write
+    - read a .txt file containing a list of items purchased over the span of one day
+    - analyze the data by using a loop to count the frequency of each individual item
+        - store analyzed items and counts in a map
+    - write that data to a file titled frequency.dat using a loop
+Display Menu and prompt user for input
+    Option 1
+        - user input word or item for search
+        - program output numeric value for frequency of puchase of input word
+    Option 2
+        - program output list of all items purchased paired with numeric value of the frequency of purchase
+    Option 3 
+        - program output list of all items purchased paired with an amount of asterisks that equals the numeric value of the 
+        frequency of purchase
+    Option 4
+        - Exit program
+
+Program 
