@@ -44,7 +44,7 @@ map<string, int> FileHandler::analyzeFileData(const string& fileName) {
     return frequencyMap;
 }
 
-void FileHandler::writeToFile(const map<string, int> frequencyMap) {
+void FileHandler::writeToFile(const map<string, int> dataMap) {
     // initialize out stream and open file to write to
     ofstream outFS;
     outFS.open("frequency.dat");
@@ -56,7 +56,7 @@ void FileHandler::writeToFile(const map<string, int> frequencyMap) {
     }
 
     // loop through data and write each city and temp in celsius
-    for (const auto& item : frequencyMap) {
+    for (const auto& item : dataMap) {
         outFS << item.first << " : " << item.second << endl;
         // check for error after writing each line
         if (outFS.fail()) {

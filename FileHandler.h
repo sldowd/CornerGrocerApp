@@ -15,7 +15,7 @@ class FileHandler {
         static map<string, int> analyzeFileData(const string& fileName);
         // function to write file
         // creates frequency.dat file, loops through map, and writes data to file
-        void writeToFile(const map<string, int>);
+        void writeToFile(const map<string, int> dataMap);
 };
 
 #endif
