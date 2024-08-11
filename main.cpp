@@ -8,6 +8,7 @@ int main() {
     
 
     map<string, int> frequencyMap = FileHandler::analyzeFileData("itemSales.txt");
+    FileHandler::writeToFile(frequencyMap);
 
     return 0;
 
