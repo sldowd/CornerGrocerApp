@@ -1,11 +1,6 @@
-#include <iostream>
-#include <map>
-#include <string>
-#include <fstream>
+#include "DataMap.h"
 
-#include "FileHandler.h"
-
-map<string, int> FileHandler::analyzeFileData(const string& fileName) {
+DataMap::DataMap(const string& fileName) {
     // input filestream
     ifstream inFS;
     // map to hold items and frequency
@@ -18,7 +13,6 @@ map<string, int> FileHandler::analyzeFileData(const string& fileName) {
     // verify file was opened successfully else exit 
     if(!inFS.is_open()) {
         cout << "Error: file could not be opened" << endl;
-        return map<string, int>();
     }
     
 
@@ -39,12 +33,15 @@ map<string, int> FileHandler::analyzeFileData(const string& fileName) {
         cout << item.first << " : " << item.second << endl;
     }
 
-    // close file and return data map
+    // close file
     inFS.close();
-    return frequencyMap;
+
+    // write to file automatically called to back up data
+    DataMap::writeToFile(frequencyMap);
+    // return map
 }
 
-void FileHandler::writeToFile(const map<string, int> dataMap) {
+void DataMap::writeToFile(const map<string, int> dataMap) {
     // initialize out stream and open file to write to
     ofstream outFS;
     outFS.open("frequency.dat");
@@ -57,7 +54,7 @@ void FileHandler::writeToFile(const map<string, int> dataMap) {
 
     // loop through data and write each city and temp in celsius
     for (const auto& item : dataMap) {
-        outFS << item.first << " : " << item.second << endl;
+        outFS << item.first << " " << item.second << endl;
         // check for error after writing each line
         if (outFS.fail()) {
             cout << "Error: write to file failed." << endl;
