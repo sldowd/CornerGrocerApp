@@ -11,7 +11,7 @@
                 "-fansi-escape-codes",
                 "-g",
                 "${workspaceFolder}/main.cpp",
-                "${workspaceFolder}/FileHandler.cpp",
+                "${workspaceFolder}/DataMap.cpp",
                 "-o",
                 "${workspaceFolder}/main"
             ],

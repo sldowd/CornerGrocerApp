@@ -1,14 +1,14 @@
 
 
-#include "FileHandler.h"
+#include "DataMap.h"
 
 using namespace std;
 
 int main() {
     
-
-    map<string, int> frequencyMap = FileHandler::analyzeFileData("itemSales.txt");
-    FileHandler::writeToFile(frequencyMap);
+    DataMap frequencyMap("itemSales.txt");
+   // map<string, int> frequencyMap = DataMap::analyzeFileData("itemSales.txt");
+    
 
     return 0;
 
