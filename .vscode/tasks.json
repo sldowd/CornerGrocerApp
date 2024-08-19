@@ -12,6 +12,7 @@
                 "-g",
                 "${workspaceFolder}/main.cpp",
                 "${workspaceFolder}/DataMap.cpp",
+                "${workspaceFolder}/CreateReports.cpp",
                 "-o",
                 "${workspaceFolder}/main"
             ],

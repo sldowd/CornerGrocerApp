@@ -1,10 +1,12 @@
 #include "DataMap.h"
 
+using namespace std;
+
 DataMap::DataMap(const string& fileName) {
     // input filestream
     ifstream inFS;
     // map to hold items and frequency
-    map<string, int> frequencyMap;
+    map<string, int> dataMap;
     string line;
     string file = fileName;
     // open sales file
@@ -14,7 +16,6 @@ DataMap::DataMap(const string& fileName) {
     if(!inFS.is_open()) {
         cout << "Error: file could not be opened" << endl;
     }
-    
 
     while (getline(inFS, line)) {
         // Remove any leading/trailing whitespace
@@ -24,24 +25,32 @@ DataMap::DataMap(const string& fileName) {
         // if line is not empty & key does not exist--key is created and count is initialized to 1 
         // if key exists in map count is incremented
         if (!line.empty()) {
-            frequencyMap[line]++;
+            this->dataMap[line]++;
         }
     }
 
     // DELETE ME -- PRINTS MAP TO TERMINAL 
-    for (const auto& item : frequencyMap ) {
-        cout << item.first << " : " << item.second << endl;
-    }
+    // for (const auto& item : dataMap ) {
+    //     cout << item.first << " : " << item.second << endl;
+    // }
 
     // close file
     inFS.close();
 
     // write to file automatically called to back up data
-    DataMap::writeToFile(frequencyMap);
+    this->writeToFile(this->dataMap);
     // return map
 }
 
-void DataMap::writeToFile(const map<string, int> dataMap) {
+int DataMap::getValue(string& key) {
+        auto it = dataMap.find(key);
+        if (it != dataMap.end()) {
+            return it->second;
+        }
+        throw out_of_range("Key not found");
+    }
+
+void DataMap::writeToFile(const map<string, int>& dataMap) {
     // initialize out stream and open file to write to
     ofstream outFS;
     outFS.open("frequency.dat");

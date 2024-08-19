@@ -6,20 +6,20 @@
 #include <string>
 #include <fstream>
 
-using namespace std;
-
-
 class DataMap {
     public:
         // Constructor reads file and creates DataMap
-        DataMap(const string& fileName);
+        DataMap(const std::string& fileName);
         // function takes key as input and returns value
-        static int const getMapValue(string key);
+        const std::map<std::string, int>& getMap() const { return dataMap; }
+        int getValue(std::string& key);
+        size_t size() const { return dataMap.size(); }
+        auto begin() const { return dataMap.begin(); }
+        auto end() const { return dataMap.end(); }
     private:
-        //map<string, int> dataMap;
+        std::map<std::string, int> dataMap;
         // function called by class to create and write a backup data file
-        void writeToFile(const map<string, int> dataMap);
-        int mapValue;
+        void writeToFile(const std::map<std::string, int>& dataMap);
 };
 
 #endif
