@@ -42,13 +42,16 @@ DataMap::DataMap(const string& fileName) {
     // return map
 }
 
-int DataMap::getValue(string& key) {
-        auto it = dataMap.find(key);
-        if (it != dataMap.end()) {
-            return it->second;
-        }
-        throw out_of_range("Key not found");
+int DataMap::getValue(const string& key) const {
+    auto it = this->dataMap.find(key);
+    if (it != this->dataMap.end()) {
+        return it->second;
+    } else {
+        // Handle the case where the key is not found
+        std::cerr << "Key not found: " << key << std::endl;
+        return 0;  // Or any other default value
     }
+}
 
 void DataMap::writeToFile(const map<string, int>& dataMap) {
     // initialize out stream and open file to write to

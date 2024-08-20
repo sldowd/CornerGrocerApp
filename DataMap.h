@@ -12,7 +12,7 @@ class DataMap {
         DataMap(const std::string& fileName);
         // function takes key as input and returns value
         const std::map<std::string, int>& getMap() const { return dataMap; }
-        int getValue(std::string& key);
+        int getValue(const std::string& key) const;
         size_t size() const { return dataMap.size(); }
         auto begin() const { return dataMap.begin(); }
         auto end() const { return dataMap.end(); }

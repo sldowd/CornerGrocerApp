@@ -31,9 +31,11 @@ int main() {
 
         if (userInput == "1") {
             string searchItem;
+            int itemFrequency;
             cout << "What item would you like to search for?" << endl;
             cin >> searchItem;
-            frequencyMap.getValue(searchItem);
+            itemFrequency = frequencyMap.getValue(searchItem);
+            cout << "Total " << searchItem << " sold: " << itemFrequency << endl;
         } 
         else if (userInput == "2") {
             CreateReports::createListReport(frequencyMap);
