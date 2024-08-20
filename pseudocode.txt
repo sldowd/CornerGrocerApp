@@ -1,28 +1,49 @@
 BEGIN
 
-Include libraries
-    - fstrean
-    - string
-    - map
-Classes
-    - CreateReports
-    - ListSearch
-    - FileHandler
-Read, analyze, and write
-    - read a .txt file containing a list of items purchased over the span of one day
-    - analyze the data by using a loop to count the frequency of each individual item
-        - store analyzed items and counts in a map
-    - write that data to a file titled frequency.dat using a loop
-Display Menu and prompt user for input
-    Option 1
-        - user input word or item for search
-        - program output numeric value for frequency of puchase of input word
-    Option 2
-        - program output list of all items purchased paired with numeric value of the frequency of purchase
-    Option 3 
-        - program output list of all items purchased paired with an amount of asterisks that equals the numeric value of the 
-        frequency of purchase
-    Option 4
-        - Exit program
+DEFINE Classes:
+    DataMap
+        - Attributes:
+            - Map to store item-frequency pairs
+        - Methods:
+            - Constructor to read data from file and populate the map
+            - getValue(item) to retrieve frequency of a given item
+    CreateReports
+        - Methods:
+            - createListReport(DataMap) to generate a list report
+            - createHistogramReport(DataMap) to generate a histogram report
 
-Program 
+DEFINE Main Function:
+    Instantiate DataMap object
+    PRINT message indicating DataMap creation and size
+
+    WHILE user input is not "4":
+        CALL printAppleLogo()
+        PRINT menu options
+        GET user input
+
+        IF user input is "1":
+            PROMPT user to enter an item to search for
+            GET user input
+            GET frequency of the item from DataMap
+            PRINT the frequency of the item
+
+        ELSE IF user input is "2":
+            CALL CreateReports::createListReport(DataMap)
+
+        ELSE IF user input is "3":
+            CALL CreateReports::createHistogramReport(DataMap)
+
+        ELSE IF user input is "4":
+            PRINT "Exiting application."
+
+        ELSE:
+            PRINT "Invalid selection"
+
+    END WHILE
+
+    RETURN 0
+
+DEFINE printAppleLogo():
+    PRINT the Apple logo and "Corner Grocer" text
+
+END

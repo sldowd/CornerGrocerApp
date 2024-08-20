@@ -7,54 +7,58 @@ using namespace std;
 void printAppleLogo();
 
 int main() {
-    //variable to hold user input
-    string userInput = "";
-    
-   // instantiate map object
+    string userInput;
+
+    // Instantiate DataMap object
     DataMap frequencyMap("itemSales.txt");
 
-    cout << "DataMap created. Size: " << frequencyMap.getMap().size() << endl;
-
-    while (userInput != "4") {
+    while (true) {
         printAppleLogo();
-        
         cout << "MENU" << endl;
         cout << "*** 1. Search for an item" << endl;
         cout << "*** 2. Print list report" << endl;
         cout << "*** 3. Print histogram report" << endl;
         cout << "*** 4. Exit Application" << endl;
-        cout << "Enter your selection:" << endl;
+        cout << "Enter your selection: ";
 
-        cin >> userInput;
+        // Use getline to avoid issues with non-string input
+        if (!getline(cin, userInput)) {
+            cout << "Error reading input. Please try again." << endl;
+            continue;
+        }
 
-        cout << "You selected " << userInput << endl;
+        // Validate menu selection
+        if (userInput == "1" || userInput == "2" || userInput == "3" || userInput == "4") {
+            cout << "You selected " << userInput << endl;
+        } else {
+            cout << "Invalid selection. Please try again." << endl;
+            continue;
+        }
 
         if (userInput == "1") {
             string searchItem;
-            int itemFrequency;
-            cout << "What item would you like to search for?" << endl;
-            cin >> searchItem;
-            itemFrequency = frequencyMap.getValue(searchItem);
+            cout << "What item would you like to search for? ";
+            if (!getline(cin, searchItem) || searchItem.empty()) {
+                cout << "Error reading item input. Please try again." << endl;
+                continue;
+            }
+
+            int itemFrequency = frequencyMap.getValue(searchItem);
             cout << "Total " << searchItem << " sold: " << itemFrequency << endl;
-        } 
+        }
         else if (userInput == "2") {
             CreateReports::createListReport(frequencyMap);
-        } 
+        }
         else if (userInput == "3") {
             CreateReports::createHistogramReport(frequencyMap);
-        } 
+        }
         else if (userInput == "4") {
             cout << "Exiting application." << endl;
             break;
-        } 
-        else {
-            cout << "Invalid selection" << endl;
         }
     }
-    
 
     return 0;
-
 }
 
 void printAppleLogo() {
