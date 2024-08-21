@@ -13,12 +13,12 @@ The Corner Grocer Item Sales Reporting Tool is a C++ program designed to analyze
 2. Download the source code files: `main.cpp`, `DataMap.h`, `DataMap.cpp`, `CreateReports.h`, and `CreateReports.cpp`.
 3. Compile the program by running the following command in your terminal:
    ```
-   g++ -o corner_grocer main.cpp DataMap.cpp CreateReports.cpp
+   g++ -o main main.cpp DataMap.cpp CreateReports.cpp
    ```
-4. The executable file `corner_grocer` will be generated, which you can then run to start the program.
+4. The executable file `CornerGrocerApp` will be generated, which you can then run to start the program.
 
 ## Usage
-1. Execute the `corner_grocer` program.
+1. Execute the `CornerGrocerApp` program by moving into the directory and entering the command './main in the terminal.
 2. The main menu will be displayed, offering the following options:
    - **1. Search for an item**: Prompts the user to enter an item name and displays the total number of units sold for that item.
    - **2. Print list report**: Generates and displays a list report of all purchased items and their corresponding sales frequencies.
