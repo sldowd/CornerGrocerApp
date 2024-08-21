@@ -1,10 +1,13 @@
 
+#include <cctype>
+
 #include "CreateReports.h"
 #include "DataMap.h"
 
 using namespace std;
 
 void printAppleLogo();
+string toTitleCase(string searchItem);
 
 int main() {
     string userInput;
@@ -43,7 +46,7 @@ int main() {
                 continue;
             }
 
-            int itemFrequency = frequencyMap.getValue(searchItem);
+            int itemFrequency = frequencyMap.getValue(toTitleCase(searchItem));
             cout << "Total " << searchItem << " sold: " << itemFrequency << endl;
         }
         else if (userInput == "2") {
@@ -72,3 +75,16 @@ void printAppleLogo() {
     cout << endl;
 }
 
+// function to convert search item to title case 
+string toTitleCase(string searchItem) {
+    // isolate first character from string
+    char firstChar = searchItem[0];
+    // convert that character to upper case
+    char upperChar = toupper(firstChar);
+
+    // assign uppercase character to first index of string
+    searchItem[0] = upperChar;
+    // return title case searchItem to pass into search
+    return searchItem;
+
+}

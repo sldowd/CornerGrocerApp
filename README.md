@@ -9,7 +9,7 @@ The Corner Grocer Item Sales Reporting Tool is a C++ program designed to analyze
 3. **Histogram Report**: Creates a visual histogram report that displays the sales frequency for each item using an ASCII-based bar chart.
 
 ## Installation
-1. Ensure you have a C++ compiler installed on your system (e.g., g++ or clang).
+1. Ensure you have a C++ compiler installed on your system.
 2. Download the source code files: `main.cpp`, `DataMap.h`, `DataMap.cpp`, `CreateReports.h`, and `CreateReports.cpp`.
 3. Compile the program by running the following command in your terminal:
    ```
