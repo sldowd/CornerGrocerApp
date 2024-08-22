@@ -21,9 +21,22 @@ The Corner Grocer Item Sales Reporting Tool is a C++ program designed to analyze
 1. Execute the `CornerGrocerApp` program by moving into the directory and entering the command './main in the terminal.
 2. The main menu will be displayed, offering the following options:
    - **1. Search for an item**: Prompts the user to enter an item name and displays the total number of units sold for that item.
+
+        <img width="436" alt="search-for-apples" src="https://github.com/user-attachments/assets/85f6416f-3785-4eec-9dda-e75e4ef60672">
+
    - **2. Print list report**: Generates and displays a list report of all purchased items and their corresponding sales frequencies.
+  
+       <img width="247" alt="menu-option-2" src="https://github.com/user-attachments/assets/c8f638ee-453d-4148-b3b0-ed23604014c9">  
+   
    - **3. Print histogram report**: Creates and displays a histogram report visualizing the sales frequencies of all purchased items.
+  
+       <img width="219" alt="menu-option-3" src="https://github.com/user-attachments/assets/fd754735-9119-4fd7-8fc3-2cc231a15e9b">  
+   
    - **4. Exit Application**: Exits the program.
+  
+       <img width="448" alt="exit-application" src="https://github.com/user-attachments/assets/3d992216-c58d-46ad-9511-57f41e4bcfcc">
+
+     
 3. Select the desired option by entering the corresponding number (1, 2, 3, or 4) and pressing Enter.
 4. Follow the on-screen instructions for each option.
 5. To exit the program, select option 4 from the main menu.
