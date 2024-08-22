@@ -1,23 +1,28 @@
+// Implementation of the 'CreateReports' class defined in CreateReports.h
+
 #include "CreateReports.h"
 
 using namespace std;
 
-// report to print list with number frequency
+// Report to print list with number frequency
 void CreateReports::createListReport(const DataMap& dataMap) {
+    // Use dataMap member function to retrieve map from object
     const auto& map = dataMap.getMap();
-    cout << "Map size: " << map.size() << endl;
+    // Error handling for empty map
     if (map.empty()) {
         cout << "The map is empty!" << endl;
         return;
     }
+    // Loop through map and print key : value pairs
     for (const auto& item : map) {
         cout << item.first << " " << item.second << endl;
     }
 }
-// report to print list with histogram
+// Report to print list with histogram
 void CreateReports::createHistogramReport(const DataMap& dataMap) {
+    // Use dataMap member function to retrieve map from object
     const auto& map = dataMap.getMap();
-    
+     // Error handling for empty map
     if (map.empty()) {
         cout << "The map is empty. No histogram to display." << endl;
         return;

@@ -14,7 +14,6 @@ DEFINE Classes:
 
 DEFINE Main Function:
     Instantiate DataMap object
-    PRINT message indicating DataMap creation and size
 
     WHILE user input is not "4":
         CALL printAppleLogo()
@@ -45,5 +44,8 @@ DEFINE Main Function:
 
 DEFINE printAppleLogo():
     PRINT the Apple logo and "Corner Grocer" text
+
+DEFINE toTitleCase():
+    RETURN search item in title case
 
 END

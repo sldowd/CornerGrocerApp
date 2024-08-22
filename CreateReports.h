@@ -1,3 +1,6 @@
+// Defines the `CreateReports` class, which provides methods
+// to generate the list and histogram reports.
+
 #ifndef CREATEREPORTS_H
 #define CREATEREPORTS_H
 

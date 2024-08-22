@@ -1,3 +1,6 @@
+/* Defines the `DataMap` class, which is responsible for reading the item
+ sales data from a file and storing the frequency of each item. */
+
 #ifndef INCLUDE_DATAMAP_H
 #define INCLUDE_DATAMAP_H
 

@@ -1,3 +1,5 @@
+// Implementation of the 'DataMap' class defined in DataMap.h
+
 #include "DataMap.h"
 
 using namespace std;
